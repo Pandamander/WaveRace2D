@@ -1,0 +1,1440 @@
+fileFormatVersion: 2
+guid: 55532215ec19e4237bda2f0b1b15bc78
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4625656755653222458
+    second: ExciteBike_0
+  - first:
+      213: -6763744502212668707
+    second: ExciteBike_1
+  - first:
+      213: -2425504683840390100
+    second: ExciteBike_2
+  - first:
+      213: -1758615515785679787
+    second: ExciteBike_3
+  - first:
+      213: -7260794951461866798
+    second: ExciteBike_4
+  - first:
+      213: -656048391203665017
+    second: ExciteBike_5
+  - first:
+      213: 1986052605773942992
+    second: ExciteBike_6
+  - first:
+      213: 3215732971079749779
+    second: ExciteBike_7
+  - first:
+      213: 705650178259526636
+    second: ExciteBike_8
+  - first:
+      213: -3606621145071328351
+    second: ExciteBike_9
+  - first:
+      213: 987752876241115083
+    second: ExciteBike_10
+  - first:
+      213: -22916659774805226
+    second: ExciteBike_11
+  - first:
+      213: -2065044689522202642
+    second: ExciteBike_12
+  - first:
+      213: -5580105863584597286
+    second: ExciteBike_13
+  - first:
+      213: 462640184015562243
+    second: ExciteBike_14
+  - first:
+      213: -5583636626684812791
+    second: ExciteBike_15
+  - first:
+      213: -1247421022434518187
+    second: ExciteBike_16
+  - first:
+      213: -2592480421600463589
+    second: ExciteBike_17
+  - first:
+      213: 5249518711659597012
+    second: ExciteBike_18
+  - first:
+      213: 7569523858575564247
+    second: ExciteBike_19
+  - first:
+      213: 470614982221950829
+    second: ExciteBike_20
+  - first:
+      213: 1300911294011934608
+    second: ExciteBike_21
+  - first:
+      213: 3361261498574235424
+    second: ExciteBike_22
+  - first:
+      213: -5658140166458659372
+    second: ExciteBike_23
+  - first:
+      213: 4922003908173643379
+    second: ExciteBike_24
+  - first:
+      213: -5696434676096328556
+    second: ExciteBike_25
+  - first:
+      213: 395576874012349847
+    second: ExciteBike_26
+  - first:
+      213: -2334536156431249205
+    second: ExciteBike_27
+  - first:
+      213: 1617825318691994065
+    second: ExciteBike_28
+  - first:
+      213: 5487320945584751377
+    second: ExciteBike_29
+  - first:
+      213: 2898571063088366016
+    second: ExciteBike_30
+  - first:
+      213: -3711040967265465612
+    second: ExciteBike_31
+  - first:
+      213: -862898595750169184
+    second: ExciteBike_32
+  - first:
+      213: 4993563494841526747
+    second: ExciteBike_33
+  - first:
+      213: -6936950779524581417
+    second: ExciteBike_34
+  - first:
+      213: 1384703997366130235
+    second: ExciteBike_35
+  - first:
+      213: -2157491038441958457
+    second: ExciteBike_36
+  - first:
+      213: 1178033535525346814
+    second: ExciteBike_37
+  - first:
+      213: 622977322412879632
+    second: ExciteBike_38
+  - first:
+      213: -6631380356320363398
+    second: ExciteBike_39
+  - first:
+      213: -9139018321428629847
+    second: ExciteBike_40
+  - first:
+      213: -3511724219354987666
+    second: ExciteBike_41
+  - first:
+      213: -6923693004126522723
+    second: ExciteBike_42
+  - first:
+      213: 2869613764264783570
+    second: ExciteBike_43
+  - first:
+      213: -437785858518376081
+    second: ExciteBike_44
+  - first:
+      213: -1500402493747337520
+    second: ExciteBike_45
+  - first:
+      213: -5394960194816734001
+    second: ExciteBike_46
+  - first:
+      213: 4251509204046377692
+    second: ExciteBike_47
+  - first:
+      213: -2970038066999840461
+    second: ExciteBike_48
+  - first:
+      213: 8875904336582389927
+    second: ExciteBike_49
+  - first:
+      213: 611460108434008052
+    second: ExciteBike_50
+  - first:
+      213: 1527575646849501142
+    second: ExciteBike_51
+  - first:
+      213: 8276000518177119359
+    second: ExciteBike_52
+  - first:
+      213: -7590333882579825971
+    second: ExciteBike_53
+  - first:
+      213: 7244176416776814909
+    second: ExciteBike_54
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ExciteBike_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 496
+        width: 40
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf576240bd5ecfb0800000000000000
+      internalID: -4625656755653222458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 494
+        width: 72
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2dc1a063a5222a0800000000000000
+      internalID: -6763744502212668707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 495
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2cb5a64750e65ed0800000000000000
+      internalID: -2425504683840390100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_3
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 495
+        width: 40
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55caa1581842897e0800000000000000
+      internalID: -1758615515785679787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_4
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 495
+        width: 44
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d27a2306797c3b90800000000000000
+      internalID: -7260794951461866798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_5
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 495
+        width: 44
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78bc6dec67f35e6f0800000000000000
+      internalID: -656048391203665017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_6
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 506
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d015688250ef8b10800000000000000
+      internalID: 1986052605773942992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_7
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 457
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39058b9791490ac20800000000000000
+      internalID: 3215732971079749779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_8
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 455
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3a9d23919fac900800000000000000
+      internalID: 705650178259526636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_9
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 468
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a36c906d25b2fdc0800000000000000
+      internalID: -3606621145071328351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_10
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 458
+        width: 201
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc7d832f10435bd00800000000000000
+      internalID: 987752876241115083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_11
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 442
+        width: 92
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b2faa5b659eaff0800000000000000
+      internalID: -22916659774805226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 336
+        width: 232
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee7e8b3cbcc7753e0800000000000000
+      internalID: -2065044689522202642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_13
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 334
+        width: 215
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada37ff184b7f82b0800000000000000
+      internalID: -5580105863584597286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_14
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 305
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306a113dbc0ab6600800000000000000
+      internalID: 462640184015562243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_15
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 281
+        width: 512
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90267974210f282b0800000000000000
+      internalID: -5583636626684812791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_16
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 265
+        width: 512
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55b9f60703540bee0800000000000000
+      internalID: -1247421022434518187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_17
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 236
+        width: 512
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b157957cac8a50cd0800000000000000
+      internalID: -2592480421600463589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_18
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc8c3284790ad840800000000000000
+      internalID: 5249518711659597012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_19
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd9d3528d95c0960800000000000000
+      internalID: 7569523858575564247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_20
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6fe05935d5f78600800000000000000
+      internalID: 470614982221950829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_21
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09700ebede3cd0210800000000000000
+      internalID: 1300911294011934608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_22
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027e6b3368995ae20800000000000000
+      internalID: 3361261498574235424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_23
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ddacd82f7f3a71b0800000000000000
+      internalID: -5658140166458659372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_24
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e36c10a787e4440800000000000000
+      internalID: 4922003908173643379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_25
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c9f05d7d232f0b0800000000000000
+      internalID: -5696434676096328556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_26
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7959dd0321f5d7500800000000000000
+      internalID: 395576874012349847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_27
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc01c901cbf0a9fd0800000000000000
+      internalID: -2334536156431249205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_28
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9f4454e8ba37610800000000000000
+      internalID: 1617825318691994065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_29
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113c322b351e62c40800000000000000
+      internalID: 5487320945584751377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_30
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c1cb9b460bc93820800000000000000
+      internalID: 2898571063088366016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_31
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa4837f6ebbf7cc0800000000000000
+      internalID: -3711040967265465612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_32
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5b02b8c4e5604f0800000000000000
+      internalID: -862898595750169184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_33
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 206
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd92361aa83bc4540800000000000000
+      internalID: 4993563494841526747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_34
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 192
+        width: 239
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d7711205000bbf90800000000000000
+      internalID: -6936950779524581417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_35
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 150
+        width: 254
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36521af2f4773310800000000000000
+      internalID: 1384703997366130235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_36
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 132
+        width: 237
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c31497d45d0f02e0800000000000000
+      internalID: -2157491038441958457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_37
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 136
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd5c725247395010800000000000000
+      internalID: 1178033535525346814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_38
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f2b85f29245a800800000000000000
+      internalID: 622977322412879632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_39
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c750353ba98f3a0800000000000000
+      internalID: -6631380356320363398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_40
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6b57bd14fab2180800000000000000
+      internalID: -9139018321428629847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_41
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63c53cad69d34fc0800000000000000
+      internalID: -3511724219354987666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_42
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d927e2365e91aef90800000000000000
+      internalID: -6923693004126522723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_43
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dee295c38ae2d720800000000000000
+      internalID: 2869613764264783570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_44
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61a257c41cace9f0800000000000000
+      internalID: -437785858518376081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_45
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d66414a1ef7d2be0800000000000000
+      internalID: -1500402493747337520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_46
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc839a59404125b0800000000000000
+      internalID: -5394960194816734001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_47
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2fc7a7815600b30800000000000000
+      internalID: 4251509204046377692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_48
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331361f2d1e48c6d0800000000000000
+      internalID: -2970038066999840461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_49
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0b752b7fb8d2b70800000000000000
+      internalID: 8875904336582389927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_50
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f7e78d9ab75c7800800000000000000
+      internalID: 611460108434008052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_51
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 136
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7800615f9033510800000000000000
+      internalID: 1527575646849501142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_52
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 136
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c55e68f924ad270800000000000000
+      internalID: 8276000518177119359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_53
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 27
+        width: 148
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcac7329c87b9a690800000000000000
+      internalID: -7590333882579825971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExciteBike_54
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 29
+        width: 188
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d318e3cd11c788460800000000000000
+      internalID: 7244176416776814909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
