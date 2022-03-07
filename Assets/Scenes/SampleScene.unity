@@ -5546,8 +5546,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 5639619190115263428}
-  forwardSpeed: 150
-  downSpeed: -300
+  forwardSpeed: 200
+  downSpeed: -200
   rotationSpeed: 500
   startPosition: {fileID: 573880536}
 --- !u!4 &5639619190115263481
