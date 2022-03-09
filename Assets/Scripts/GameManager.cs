@@ -36,9 +36,7 @@ DONE:
 
 
 NEXT UP:
-Make a curvy wave with collision
-Have right arrow add force down and to the right, see if that works for recreating tiny wings
-Have left arrow rotate you backwards
+
 
 
  */
