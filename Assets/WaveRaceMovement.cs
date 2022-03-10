@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class WaveRaceMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rigidBody;
-    [SerializeField] private float forwardSpeed = 100f;
-    [SerializeField] private float downSpeed = 70f;
-    [SerializeField] private float rotationSpeed = 500;
+    [SerializeField] private float accelSpeed = 100f;
+    [SerializeField] private float accelDownSpeed = 70f;
+    [SerializeField] private float accelRotationSpeed = 50;
+    [SerializeField] private float diveSpeed = 70f;
+    [SerializeField] private float backFloatSpeed = 70f;
+    [SerializeField] private float backRotationSpeed = 500;
     [SerializeField] private Transform startPosition;
     [SerializeField] private Transform topOfJetSki;
     [SerializeField] private Transform bottomOfJetSki;
     [SerializeField] private float maxSpeed = 10f;
-    [SerializeField] private string speedometer;
 
     public bool knockedOff;
-    private bool m_Grounded;
+    public bool m_Grounded;
     private bool m_LandOnHead;
     private float k_GroundedRadius = 0.05f;
     [SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
@@ -32,19 +35,35 @@ public class WaveRaceMovement : MonoBehaviour
     {
         knockedOff = false;
         // TODO: make the rotataion and speed back to normal
+        rigidBody.velocity = Vector3.zero;
+        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        // Accelerate. Only works if not knocked off
         if (Input.GetKey(KeyCode.RightArrow) && !knockedOff)
         {
-            rigidBody.AddForce(new Vector2(forwardSpeed, downSpeed) * Time.deltaTime);
+            if (m_Grounded) //if on the water
+            {
+                rigidBody.AddForce(new Vector2(accelSpeed, accelDownSpeed * -1f) * Time.deltaTime); // move forward
+            }
+            else // if in the air
+            {
+                rigidBody.AddForce(new Vector2(0f, diveSpeed) * Time.deltaTime); // dive down
+                transform.Rotate(new Vector3(0, 0, accelRotationSpeed) * Time.deltaTime); // rotate forward a little bit
+            }
+            
         }
 
+        // Backflip
         if (Input.GetKey(KeyCode.LeftArrow) && !knockedOff)
         {
-            transform.Rotate(new Vector3(0, 0, rotationSpeed) * Time.deltaTime);
+            rigidBody.AddForce(new Vector2(0f, backFloatSpeed) * Time.deltaTime); // float up a little bit
+            transform.Rotate(new Vector3(0, 0, backRotationSpeed) * Time.deltaTime); // rotate back
         }
 
 
@@ -60,7 +79,6 @@ public class WaveRaceMovement : MonoBehaviour
         }
 
         rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity, maxSpeed);
-        speedometer = rigidBody.velocity.ToString();
 
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
@@ -74,8 +92,7 @@ public class WaveRaceMovement : MonoBehaviour
             {
                 m_Grounded = true;
                 if (!wasGrounded)
-                    Debug.Log("On Ground");
-                // Debug.Log("Ground is " + colliders[i].name); // BUG: Haven't figured this out, the ground is colliding all the time so jump get set to false immeidately
+                    Debug.Log("Landed on Ground");
             }
         }
 
@@ -94,15 +111,14 @@ public class WaveRaceMovement : MonoBehaviour
                 if (!wasOnHead)
                     Debug.Log("Land on head");
                     knockedOff = true;
-                // Debug.Log("Ground is " + colliders[i].name); // BUG: Haven't figured this out, the ground is colliding all the time so jump get set to false immeidately
             }
         }
     }
+
+    public int GetCurrentSpeed()
+    {
+        float speedAsFloat = (rigidBody.velocity.magnitude / maxSpeed) * 105f;
+        return (int)Math.Floor(speedAsFloat);
+    }
 }
 
-/*
- Next up:
-Look at tiny wings, see if there is some kind of acceleration that's happening on the down ramps. Then build that
-Play aroudn with the height of waves, speed, settings
-Add in a timer to finish
- */

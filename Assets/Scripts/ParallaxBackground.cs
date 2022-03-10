@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ParallaxBackground : MonoBehaviour {
 
@@ -22,7 +23,7 @@ public class ParallaxBackground : MonoBehaviour {
 
 			startPosition = transform.position;
 			float pixelsPerUnit = 100f;
-			worldUnitsOfSize = GetComponent<SpriteRenderer>().sprite.rect.width / pixelsPerUnit;
+			worldUnitsOfSize = GetComponent<SpriteRenderer>().sprite.rect.width / pixelsPerUnit; // This doesn't work for scaled items
 
 			// Create the copy for scrolling
 			GameObject SecondSpriteCreator = new GameObject(); // Instantiate a gameobject with a spritesheet, and make it this gameobject's child
@@ -64,7 +65,7 @@ public class ParallaxBackground : MonoBehaviour {
 		timeCounter += Time.deltaTime;
 
 		float newPosition = Time.deltaTime / 100 * scrollSpeed;
-
+		//Debug.Log(transform.position.x + ", " + newPosition + ", " + worldUnitsOfSize);
 		transform.position = new Vector3(Mathf.Repeat(transform.position.x + newPosition, worldUnitsOfSize),
 			transform.position.y,
 			transform.position.z)
