@@ -37,6 +37,7 @@ public class WaveRaceMovement : MonoBehaviour
         // TODO: make the rotataion and speed back to normal
         rigidBody.velocity = Vector3.zero;
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+        GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
 
     }
 
@@ -108,9 +109,8 @@ public class WaveRaceMovement : MonoBehaviour
             if (collidersHead[i].gameObject != gameObject)
             {
                 m_LandOnHead = true;
-                if (!wasOnHead)
-                    Debug.Log("Land on head");
-                    knockedOff = true;
+                //if (!wasOnHead)
+                    LandedOnHead();
             }
         }
     }
@@ -119,6 +119,13 @@ public class WaveRaceMovement : MonoBehaviour
     {
         float speedAsFloat = (rigidBody.velocity.magnitude / maxSpeed) * 105f;
         return (int)Math.Floor(speedAsFloat);
+    }
+
+    public void LandedOnHead()
+    {
+        Debug.Log("Land on head");
+        knockedOff = true;
+        GetComponent<SpriteRenderer>().color = new Color32(150, 50, 50, 255);
     }
 }
 

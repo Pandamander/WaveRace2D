@@ -353,7 +353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d455670492d1842b19bb0a3233d87cf5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b06f78f46788e34da1d9677277defc4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -494,11 +494,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Space to accelerate your jet ski
+  m_text: 'RIGHT ARROW - Acclerate, Dive
+
+    LEFT ARROW - Backflip
 
 
-
-    Press Enter to begin!'
+    Press any
+    key to start!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}
   m_sharedMaterial: {fileID: -8438218881289682481, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}
