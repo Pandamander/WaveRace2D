@@ -7,6 +7,7 @@ public class NewSpawnScript : MonoBehaviour
     public List<Transform> spawnPoints;
     public float spawnTime = 1.5f;
     public GameObject[] spawnableObjects; // Make sure these objects put here have the SpawnableObjects script added
+    public bool OnlyOneSpawnPerPoint;
 
     public List<Transform> possibleSpawns = new List<Transform>(); // This keeps track of the list of possible 
 
@@ -40,7 +41,8 @@ public class NewSpawnScript : MonoBehaviour
             NewSpawnedObject.transform.SetParent(this.transform); // parent spawned object to whatever transform this script is contained within
             NewSpawnedObject.GetComponent<SpawnableObject>().mySpawnPoint = possibleSpawns[spawnIndex]; //NullReferenceException: If this is throwing an error, probably means the item spawned doesn't have the SpawnableObject script added to it
 
-            possibleSpawns.RemoveAt(spawnIndex);
+            if (OnlyOneSpawnPerPoint) // If each spawn object should occupy that spawn point. False means lots can come out
+                possibleSpawns.RemoveAt(spawnIndex);
 
          }
     }

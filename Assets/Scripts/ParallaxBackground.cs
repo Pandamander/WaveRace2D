@@ -14,7 +14,6 @@ public class ParallaxBackground : MonoBehaviour {
 	private float worldUnitsOfSize;
 
 	void Start () {
-		// DOESN'T WORK QUITE YET
 		// This script can be attached to anything that needs to scroll and also repeat
 		// Must be added to a object that has a sprite renderer
 
@@ -23,7 +22,7 @@ public class ParallaxBackground : MonoBehaviour {
 
 			startPosition = transform.position;
 			float pixelsPerUnit = 100f;
-			worldUnitsOfSize = GetComponent<SpriteRenderer>().sprite.rect.width / pixelsPerUnit; // This doesn't work for scaled items
+			worldUnitsOfSize = GetComponent<SpriteRenderer>().sprite.rect.width / pixelsPerUnit;
 			Debug.Log(worldUnitsOfSize + ", " + GetComponent<SpriteRenderer>().sprite.rect.width);
 
 			// Create the copy for scrolling

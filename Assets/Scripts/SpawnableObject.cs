@@ -9,13 +9,15 @@ public class SpawnableObject : MonoBehaviour
     private NewSpawnScript NSS;
     public Transform mySpawnPoint;
     public string nameOfParentSpawnerObj;
+    [SerializeField] private bool destroyMyself = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        NSS = GameObject.Find(nameOfParentSpawnerObj).GetComponent<NewSpawnScript>(); // Make sure this is set to the name of the GameObject that's the NewSpawnScript
+        NSS = GameObject.Find(nameOfParentSpawnerObj).GetComponent<NewSpawnScript>(); // If getting error: Make sure this is set to the name of the GameObject that's the NewSpawnScript
 
-        //StartCoroutine(DestroyMe());
+        if (destroyMyself)
+            StartCoroutine(DestroyMe());
     }
 
     // Update is called once per frame
@@ -32,22 +34,11 @@ public class SpawnableObject : MonoBehaviour
             {
             if (NSS.spawnPoints[i] == mySpawnPoint)
             {
-                NSS.possibleSpawns.Add(NSS.spawnPoints[i]); // Add this back in as a valid spawn point
+                if (NSS.OnlyOneSpawnPerPoint)
+                    NSS.possibleSpawns.Add(NSS.spawnPoints[i]); // Add this back in as a valid spawn point
             }
         }
         Destroy(gameObject);
     }
 
-    public void RemoveSpawnedObject() // Call this when it's time to kill the object, so that it can be a valid spawn again
-    {
-        for (int i = 0; i < NSS.spawnPoints.Count; i++)
-        {
-            if (NSS.spawnPoints[i] == mySpawnPoint)
-            {
-                NSS.possibleSpawns.Add(NSS.spawnPoints[i]); // Add this back in as a valid spawn point
-            }
-        }
-        Destroy(gameObject);
-        
-    }
 }
