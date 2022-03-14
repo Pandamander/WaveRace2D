@@ -32,17 +32,35 @@ public class GameManager : MonoBehaviour
  * 
 
 DONE:
-Put in music
-PUt in instructions
 
 
 
-NEXT UP:
-Make the water repeat forever
+
+NEEDED FOR DEMO:
+Make a horizontal water, and small waves, more spaced out - DONE
+Try out torque, and clamp the rotation speed if possible - DONE
+Detect a backflip, let you increase max speed based on that
+Have a increase to the max speed
+Have a speed counter
+Have it tell you press r to restart
+Do Cooper's sprites
+
+
+Forget about the tiny wings thing of catching the down wave. There's not enough time
+It's just accelerate, jump, backflip
+
+
+
+
+
+Make riding on the water, no ramps, feel good. Winning and losing
+
 Make it restart you automatically
 Zero out the torque when you restart
 Then, zero out torque when you rotate back. It feels back to release left arrow and then start rotating forwards again
 Add in a animation for when you are diving to indicate it
 Feels bad to not be able to go up the ramp
+
+
 
  */

@@ -9,10 +9,11 @@ public class WaveRaceMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private float accelSpeed = 100f;
     [SerializeField] private float accelDownSpeed = 70f;
-    [SerializeField] private float accelRotationSpeed = 50;
+    [SerializeField] private float forwardRotationSpeed = -1;
     [SerializeField] private float diveSpeed = 70f;
     [SerializeField] private float backFloatSpeed = 70f;
-    [SerializeField] private float backRotationSpeed = 500;
+    [SerializeField] private float backRotationSpeed = 1;
+    [SerializeField] private float maxAngularVelocity = 100f;
     [SerializeField] private Transform startPosition;
     [SerializeField] private Transform topOfJetSki;
     [SerializeField] private Transform bottomOfJetSki;
@@ -23,7 +24,10 @@ public class WaveRaceMovement : MonoBehaviour
     public bool m_Grounded;
     private bool m_LandOnHead;
     private float k_GroundedRadius = 0.05f;
-    [SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
+    private int numberFlips;
+    private float flipDegrees;
+    private float initialRotation;
+    [SerializeField] private LayerMask m_WhatIsGround;	// A mask determining what is ground to the character
 
 
     // Start is called before the first frame update
@@ -35,9 +39,9 @@ public class WaveRaceMovement : MonoBehaviour
     void ResetJetSki()
     {
         knockedOff = false;
-        // TODO: make the rotataion and speed back to normal
         rigidBody.velocity = Vector3.zero;
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+        rigidBody.angularVelocity = 0f;
         GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
         timer.RestartTimer();
 
@@ -46,7 +50,6 @@ public class WaveRaceMovement : MonoBehaviour
     
     void FixedUpdate() // Adjusting Rigidbody. Use force, same time between calls
     {
-        FixRotation();
 
         // Accelerate. Only works if not knocked off
         if (Input.GetKey(KeyCode.RightArrow) && !knockedOff)
@@ -58,13 +61,7 @@ public class WaveRaceMovement : MonoBehaviour
             else // if in the air
             {
                 rigidBody.AddForce(new Vector2(0f, diveSpeed) * Time.deltaTime); // dive down
-                Debug.Log("Z: " + transform.rotation.z);
-                if (transform.rotation.z > -0.3f)
-                {
-                    transform.Rotate(new Vector3(0, 0, -5));
-                }
-                    
-                //transform.Rotate(new Vector3(0, 0, accelRotationSpeed) * Time.deltaTime); // rotate forward a little bit
+                rigidBody.AddTorque(forwardRotationSpeed); // Tilt forward
             }
             
         }
@@ -73,7 +70,7 @@ public class WaveRaceMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) && !knockedOff)
         {
             rigidBody.AddForce(new Vector2(0f, backFloatSpeed) * Time.deltaTime); // float up a little bit
-            transform.Rotate(new Vector3(0, 0, backRotationSpeed)); // rotate back
+            rigidBody.AddTorque(backRotationSpeed);
         }
 
 
@@ -102,7 +99,10 @@ public class WaveRaceMovement : MonoBehaviour
             {
                 m_Grounded = true;
                 if (!wasGrounded)
-                    Debug.Log("Landed on Ground");
+                {
+                    //Debug.Log("Landed on Ground");
+                }
+
             }
         }
 
@@ -122,12 +122,24 @@ public class WaveRaceMovement : MonoBehaviour
                     LandedOnHead();
             }
         }
+
+        LimitAngularVelocity();
+        CheckForBackflip();
     }
 
     private void Update() // Simple timers, receiving input
     { 
         
 
+    }
+
+    private void LimitAngularVelocity()
+    {
+        // Keeps it from spinning too fast
+        if (rigidBody.angularVelocity > maxAngularVelocity)
+            rigidBody.angularVelocity = maxAngularVelocity;
+        if (rigidBody.angularVelocity < maxAngularVelocity * -1f)
+            rigidBody.angularVelocity = maxAngularVelocity * -1;
     }
 
     public int GetCurrentSpeed()
@@ -138,14 +150,17 @@ public class WaveRaceMovement : MonoBehaviour
 
     public void LandedOnHead()
     {
-        Debug.Log("Land on head");
         knockedOff = true;
         GetComponent<SpriteRenderer>().color = new Color32(150, 50, 50, 255);
     }
 
-    void FixRotation()
+    private void CheckForBackflip()
     {
-        
+
+        if (rigidBody.rotation > 360)
+        {
+            Debug.Log("Backflip");
+        }
     }
 }
 
