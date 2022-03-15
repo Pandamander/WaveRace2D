@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class WaveRaceMovement : MonoBehaviour
 {
@@ -19,16 +20,18 @@ public class WaveRaceMovement : MonoBehaviour
     [SerializeField] private Transform bottomOfJetSki;
     [SerializeField] private float maxSpeed = 10f;
     [SerializeField] private Timer timer;
+    [SerializeField] private TMP_Text powerMeter;
 
     public bool knockedOff;
     public bool m_Grounded;
     private bool m_LandOnHead;
     private float k_GroundedRadius = 0.05f;
-    private int numberFlips;
-    private float flipDegrees;
-    private float initialRotation;
+
     [SerializeField] private LayerMask m_WhatIsGround;	// A mask determining what is ground to the character
 
+    public float flipCounter1;
+    public float flipCounter2;
+    public int numberFlips;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +47,9 @@ public class WaveRaceMovement : MonoBehaviour
         rigidBody.angularVelocity = 0f;
         GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
         timer.RestartTimer();
-
+        flipCounter1 = flipCounter2 = 0f;
+        numberFlips = 0;
+        UpdateMaxSpeed();
     }
 
     
@@ -155,12 +160,49 @@ public class WaveRaceMovement : MonoBehaviour
     }
 
     private void CheckForBackflip()
-    {
+    { 
 
-        if (rigidBody.rotation > 360)
+        if (rigidBody.rotation > flipCounter1)
         {
-            Debug.Log("Backflip");
+            flipCounter2 += rigidBody.rotation - flipCounter1;
+            flipCounter1 = rigidBody.rotation;
         }
+
+        if (flipCounter2 >= 360)
+        {
+            flipCounter2 = 0;
+            numberFlips += 1;
+            UpdateMaxSpeed();
+        }
+
+    }
+
+    private void UpdateMaxSpeed()
+    {
+        switch(numberFlips)
+        {
+            case 0:
+                maxSpeed = 5;
+                break;
+            case 1:
+                maxSpeed = 6;
+                break;
+            case 2:
+                maxSpeed = 7;
+                break;
+            case 3:
+                maxSpeed = 8;
+                break;
+            case 4:
+                maxSpeed = 9;
+                break;
+            default:
+                if (numberFlips >= 5)
+                    maxSpeed = 10;
+                break;
+        }
+
+        powerMeter.text = "Power: " + maxSpeed;
     }
 }
 
