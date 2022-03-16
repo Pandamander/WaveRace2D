@@ -17,6 +17,6 @@ public class DisplaySpeed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speedometer.text = jetSki.GetCurrentSpeed() + " km/h";
+        speedometer.text = jetSki.GetCurrentSpeed() + " mph";
     }
 }

@@ -24,6 +24,7 @@ public class FinishLine : MonoBehaviour
     void EndRace()
     {
         timer.timerRunning = false;
+        FindObjectOfType<EndGameUI>().ShowRestartDialog();
     }
 
     

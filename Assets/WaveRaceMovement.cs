@@ -83,6 +83,7 @@ public class WaveRaceMovement : MonoBehaviour
         {
             transform.position = startPosition.position;
             ResetJetSki();
+            FindObjectOfType<EndGameUI>().HideUI();
         }
 
         if (knockedOff)
@@ -122,7 +123,7 @@ public class WaveRaceMovement : MonoBehaviour
         {
             if (collidersHead[i].gameObject != gameObject)
             {
-                m_LandOnHead = true;
+                
                 //if (!wasOnHead)
                     LandedOnHead();
             }
@@ -149,14 +150,20 @@ public class WaveRaceMovement : MonoBehaviour
 
     public int GetCurrentSpeed()
     {
-        float speedAsFloat = (rigidBody.velocity.magnitude / maxSpeed) * 105f;
+        //float speedAsFloat = (rigidBody.velocity.magnitude / maxSpeed) * 110f;
+        float speedAsFloat = (rigidBody.velocity.magnitude) * 10;
         return (int)Math.Floor(speedAsFloat);
+
+        // Power; 5.2, max speed = 52 mph
     }
 
     public void LandedOnHead()
     {
+        m_LandOnHead = true;
         knockedOff = true;
         GetComponent<SpriteRenderer>().color = new Color32(150, 50, 50, 255);
+
+        FindObjectOfType<EndGameUI>().ShowRestartDialog();
     }
 
     private void CheckForBackflip()
@@ -179,10 +186,11 @@ public class WaveRaceMovement : MonoBehaviour
 
     private void UpdateMaxSpeed()
     {
+        /*
         switch(numberFlips)
         {
             case 0:
-                maxSpeed = 5;
+                maxSpeed = 5.25;
                 break;
             case 1:
                 maxSpeed = 6;
@@ -201,6 +209,9 @@ public class WaveRaceMovement : MonoBehaviour
                     maxSpeed = 10;
                 break;
         }
+        */
+
+        maxSpeed = 5 + numberFlips * 0.3f;
 
         powerMeter.text = "Power: " + maxSpeed;
     }

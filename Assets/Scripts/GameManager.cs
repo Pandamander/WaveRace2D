@@ -39,9 +39,9 @@ DONE:
 NEEDED FOR DEMO:
 Make a horizontal water, and small waves, more spaced out - DONE
 Try out torque, and clamp the rotation speed if possible - DONE
-Detect backflips
-Have a flip increase your max speed
-Have a simple text speed UI
+Detect backflips - DONE
+Have a flip increase your max speed - dONE
+Have a simple text speed UI - DONE
 Have it tell you press r to restart when you finish or when you fall over
 
 

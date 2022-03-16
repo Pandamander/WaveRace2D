@@ -5,12 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class EndGame : MonoBehaviour
+public class EndGameUI : MonoBehaviour
 {
-    private bool isGameOver;
     [SerializeField] GameObject endingUI;
 
-    [SerializeField] TMP_Text scoreText;
+    [SerializeField] TMP_Text endingText;
 
 
     // This script handles tracking the score and also the end of the game
@@ -29,16 +28,17 @@ public class EndGame : MonoBehaviour
 
     }
 
-
-    public void EndTheGame()
+    public void HideUI()
     {
-        isGameOver = true;
+        endingUI.SetActive(false);
+    }
+
+    public void ShowRestartDialog()
+    {
         endingUI.SetActive(true);
 
+        endingText.text = "Press [R] to Restart";
 
-        scoreText.text = "Great run!";
-
-        //scoreText.text = "You've gone down with yer ship! \n\n Time Score: " + timeScore + "\nMoney Score: " + moneyScore + "\n\nTotal Score: " + totalScore + "\n\nPress Enter to Play Again";
 
     }
 
