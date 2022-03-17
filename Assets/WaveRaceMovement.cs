@@ -19,6 +19,7 @@ public class WaveRaceMovement : MonoBehaviour
     [SerializeField] private Transform topOfJetSki;
     [SerializeField] private Transform bottomOfJetSki;
     [SerializeField] private float maxSpeed = 10f;
+    [SerializeField] private float maxMaxSpeed = 12f; 
     [SerializeField] private Timer timer;
     [SerializeField] private TMP_Text powerMeter;
 
@@ -186,34 +187,15 @@ public class WaveRaceMovement : MonoBehaviour
 
     private void UpdateMaxSpeed()
     {
-        /*
-        switch(numberFlips)
-        {
-            case 0:
-                maxSpeed = 5.25;
-                break;
-            case 1:
-                maxSpeed = 6;
-                break;
-            case 2:
-                maxSpeed = 7;
-                break;
-            case 3:
-                maxSpeed = 8;
-                break;
-            case 4:
-                maxSpeed = 9;
-                break;
-            default:
-                if (numberFlips >= 5)
-                    maxSpeed = 10;
-                break;
-        }
-        */
+        float minimumSpeed = 5f;
 
-        maxSpeed = 5 + numberFlips * 0.3f;
+        maxSpeed = minimumSpeed + numberFlips;
+
+        if (maxSpeed > maxMaxSpeed)
+            maxSpeed = maxMaxSpeed;
 
         powerMeter.text = "Power: " + maxSpeed;
+        FindObjectOfType<MeterUI>().ChangeCurrentValue((int)maxSpeed - (int)minimumSpeed);
     }
 }
 

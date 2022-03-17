@@ -32,36 +32,38 @@ public class GameManager : MonoBehaviour
  * 
 
 DONE:
+Make the power bar into balls
 
 
 
+NEXT UP:
+Gameplay:
 
-NEEDED FOR DEMO:
-Make a horizontal water, and small waves, more spaced out - DONE
-Try out torque, and clamp the rotation speed if possible - DONE
-Detect backflips - DONE
-Have a flip increase your max speed - dONE
-Have a simple text speed UI - DONE
-Have it tell you press r to restart when you finish or when you fall over
+The power should go back down???? It's like a boost you get from flipping!
+Have it say NICE! when you flip
+
+Level structure:
+Have it say ready set GO and then timer starts
+Have it give you a medal at the end based on your time
 
 
+P2 level structure:
+Let you pick different levels, try to get gold in all of them
+
+P2 gameplay
+Have you get style points
+
+
+Visuals:
 Do Cooper's sprites
-
-
-Forget about the tiny wings thing of catching the down wave. There's not enough time
-It's just accelerate, jump, backflip
+Look up unity trails, see how those work, enable when you are going fast
 
 
 
 
 
-Make riding on the water, no ramps, feel good. Winning and losing
 
-Make it restart you automatically
-Zero out the torque when you restart
-Then, zero out torque when you rotate back. It feels back to release left arrow and then start rotating forwards again
-Add in a animation for when you are diving to indicate it
-Feels bad to not be able to go up the ramp
+
 
 
 
