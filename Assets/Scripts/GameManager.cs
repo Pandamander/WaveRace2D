@@ -39,10 +39,12 @@ DONE:
 NEEDED FOR DEMO:
 Make a horizontal water, and small waves, more spaced out - DONE
 Try out torque, and clamp the rotation speed if possible - DONE
-Detect a backflip, let you increase max speed based on that
-Have a increase to the max speed
-Have a speed counter
-Have it tell you press r to restart
+Detect backflips - DONE
+Have a flip increase your max speed - dONE
+Have a simple text speed UI - DONE
+Have it tell you press r to restart when you finish or when you fall over
+
+
 Do Cooper's sprites
 
 

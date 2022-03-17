@@ -494,13 +494,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'RIGHT ARROW - Acclerate, Dive
+  m_text: 'RIGHT ARROW - Acclerate
 
     LEFT ARROW - Backflip
 
 
-    Press any
-    key to start!'
+    Do flips to increase
+    Max Speed!
+
+
+    Press any key to start!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}
   m_sharedMaterial: {fileID: -8438218881289682481, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}
