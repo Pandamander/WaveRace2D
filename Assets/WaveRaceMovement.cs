@@ -18,10 +18,12 @@ public class WaveRaceMovement : MonoBehaviour
     [SerializeField] private Transform startPosition;
     [SerializeField] private Transform topOfJetSki;
     [SerializeField] private Transform bottomOfJetSki;
+    [SerializeField] private float minimumSpeed = 5f;
     [SerializeField] private float maxSpeed = 10f;
     [SerializeField] private float maxMaxSpeed = 12f; 
     [SerializeField] private Timer timer;
-    [SerializeField] private TMP_Text powerMeter;
+    [SerializeField] private float powerMeterDownTimer = 5f;
+    //[SerializeField] private TMP_Text powerMeter;
 
     public bool knockedOff;
     public bool m_Grounded;
@@ -33,6 +35,8 @@ public class WaveRaceMovement : MonoBehaviour
     public float flipCounter1;
     public float flipCounter2;
     public int numberFlips;
+
+    private float powerMeterCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -50,10 +54,16 @@ public class WaveRaceMovement : MonoBehaviour
         timer.RestartTimer();
         flipCounter1 = flipCounter2 = 0f;
         numberFlips = 0;
-        UpdateMaxSpeed();
+        maxSpeed = minimumSpeed;
+        ChangeMaxSpeed(0);
     }
 
-    
+    void Update()
+    {
+        PowerMeterDown();
+
+    }
+
     void FixedUpdate() // Adjusting Rigidbody. Use force, same time between calls
     {
 
@@ -92,7 +102,7 @@ public class WaveRaceMovement : MonoBehaviour
             rigidBody.AddForce(new Vector2(0f, -100) * Time.deltaTime);
         }
 
-        rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity, maxSpeed);
+        rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity, maxSpeed); // This is where the max speed gets applied
 
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
@@ -134,11 +144,6 @@ public class WaveRaceMovement : MonoBehaviour
         CheckForBackflip();
     }
 
-    private void Update() // Simple timers, receiving input
-    { 
-        
-
-    }
 
     private void LimitAngularVelocity()
     {
@@ -180,22 +185,36 @@ public class WaveRaceMovement : MonoBehaviour
         {
             flipCounter2 = 0;
             numberFlips += 1;
-            UpdateMaxSpeed();
+            ChangeMaxSpeed(1);
         }
 
     }
 
-    private void UpdateMaxSpeed()
+    private void ChangeMaxSpeed(float howMuch)
     {
-        float minimumSpeed = 5f;
+        // This updates the max speed based on how many flips have been done, and updates the power UI
 
-        maxSpeed = minimumSpeed + numberFlips;
+        maxSpeed += howMuch;
 
         if (maxSpeed > maxMaxSpeed)
             maxSpeed = maxMaxSpeed;
 
-        powerMeter.text = "Power: " + maxSpeed;
+        //powerMeter.text = "Power: " + maxSpeed;
         FindObjectOfType<MeterUI>().ChangeCurrentValue((int)maxSpeed - (int)minimumSpeed);
+    }
+
+    private void PowerMeterDown()
+    {
+        // This reduces the power meter on a timer regularly
+        powerMeterCounter += Time.deltaTime;
+
+        if (powerMeterCounter > powerMeterDownTimer)
+        {
+            powerMeterCounter = 0f; // Reset
+            if (maxSpeed > minimumSpeed)
+                ChangeMaxSpeed(-1);
+            
+        }
     }
 }
 

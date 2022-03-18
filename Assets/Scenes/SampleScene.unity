@@ -745,7 +745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &156144042
 RectTransform:
   m_ObjectHideFlags: 0
@@ -803,8 +803,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1440245165
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Time: 5
   m_Parameters:
@@ -7940,9 +7940,11 @@ MonoBehaviour:
   startPosition: {fileID: 573880536}
   topOfJetSki: {fileID: 273931367}
   bottomOfJetSki: {fileID: 731642657}
+  minimumSpeed: 5
   maxSpeed: 7
+  maxMaxSpeed: 12
   timer: {fileID: 1903444654}
-  powerMeter: {fileID: 2023108836}
+  powerMeterDownTimer: 3
   knockedOff: 0
   m_Grounded: 0
   m_WhatIsGround:
