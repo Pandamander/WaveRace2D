@@ -5,7 +5,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public float timerNumber;
+    public float timerValue;
     public bool timerRunning = true;
     [SerializeField] private TMP_Text timerText;
 
@@ -21,15 +21,25 @@ public class Timer : MonoBehaviour
     {
         if (timerRunning)
         {
-            timerNumber += Time.deltaTime;
+            timerValue += Time.deltaTime;
         }
 
-        timerText.text = timerNumber.ToString("0.0");
+        timerText.text = timerValue.ToString("0.0");
     }
 
     public void RestartTimer()
     {
-        timerNumber = 0f;
+        timerValue = 0f;
         timerRunning = true;
+    }
+
+    public float GetTimerValue()
+    {
+        return timerValue;
+    }
+
+    public void StopTimer()
+    {
+        timerRunning = false;
     }
 }

@@ -56,6 +56,7 @@ public class WaveRaceMovement : MonoBehaviour
         numberFlips = 0;
         maxSpeed = minimumSpeed;
         ChangeMaxSpeed(0);
+        FindObjectOfType<OnOffUI>().HideUI();
     }
 
     void Update()
@@ -94,7 +95,6 @@ public class WaveRaceMovement : MonoBehaviour
         {
             transform.position = startPosition.position;
             ResetJetSki();
-            FindObjectOfType<EndGameUI>().HideUI();
         }
 
         if (knockedOff)
@@ -157,7 +157,7 @@ public class WaveRaceMovement : MonoBehaviour
     public int GetCurrentSpeed()
     {
         //float speedAsFloat = (rigidBody.velocity.magnitude / maxSpeed) * 110f;
-        float speedAsFloat = (rigidBody.velocity.magnitude) * 10;
+        float speedAsFloat = (rigidBody.velocity.magnitude) * 10 + 4;
         return (int)Math.Floor(speedAsFloat);
 
         // Power; 5.2, max speed = 52 mph
@@ -169,7 +169,7 @@ public class WaveRaceMovement : MonoBehaviour
         knockedOff = true;
         GetComponent<SpriteRenderer>().color = new Color32(150, 50, 50, 255);
 
-        FindObjectOfType<EndGameUI>().ShowRestartDialog();
+        FindObjectOfType<EndOfRaceScoring>().EndRaceGiveScore(-1f);
     }
 
     private void CheckForBackflip()
@@ -181,10 +181,11 @@ public class WaveRaceMovement : MonoBehaviour
             flipCounter1 = rigidBody.rotation;
         }
 
-        if (flipCounter2 >= 360)
+        if (flipCounter2 >= 360) // they did a backflip!
         {
             flipCounter2 = 0;
             numberFlips += 1;
+            powerMeterCounter = 0f; // Reset the power meter down
             ChangeMaxSpeed(1);
         }
 

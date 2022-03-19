@@ -32,19 +32,27 @@ public class GameManager : MonoBehaviour
  * 
 
 DONE:
-Make the power bar into balls
+- Ending Class
+- Check time
+- Serializable values of times and medals
+- Change the text base don the medals
+- Press R to restart
+
 
 
 
 NEXT UP:
-Gameplay:
-
-The power should go back down???? It's like a boost you get from flipping!
-Have it say NICE! when you flip
-
 Level structure:
 Have it say ready set GO and then timer starts
 Have it give you a medal at the end based on your time
+- Press L to go to level select
+- Store the medal in a instanced object
+
+Make the level longer and more fun
+
+
+Gameplay:
+Have it say NICE! when you flip
 
 
 P2 level structure:

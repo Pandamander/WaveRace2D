@@ -23,8 +23,8 @@ public class FinishLine : MonoBehaviour
 
     void EndRace()
     {
-        timer.timerRunning = false;
-        FindObjectOfType<EndGameUI>().ShowRestartDialog();
+        timer.StopTimer();
+        FindObjectOfType<EndOfRaceScoring>().EndRaceGiveScore(timer.GetTimerValue());
     }
 
     
