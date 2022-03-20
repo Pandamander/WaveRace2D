@@ -32,36 +32,46 @@ public class GameManager : MonoBehaviour
  * 
 
 DONE:
+- Ending Class
+- Check time
+- Serializable values of times and medals
+- Change the text base don the medals
+- Press R to restart
 
 
 
 
-NEEDED FOR DEMO:
-Make a horizontal water, and small waves, more spaced out - DONE
-Try out torque, and clamp the rotation speed if possible - DONE
-Detect backflips - DONE
-Have a flip increase your max speed - dONE
-Have a simple text speed UI - DONE
-Have it tell you press r to restart when you finish or when you fall over
+NEXT UP:
+Level structure:
+Have it say ready set GO and then timer starts
+Have it give you a medal at the end based on your time
+- Press L to go to level select
+- Store the medal in a instanced object
+
+Make the level longer and more fun
 
 
+Gameplay:
+Have it say NICE! when you flip
+
+
+P2 level structure:
+Let you pick different levels, try to get gold in all of them
+
+P2 gameplay
+Have you get style points
+
+
+Visuals:
 Do Cooper's sprites
-
-
-Forget about the tiny wings thing of catching the down wave. There's not enough time
-It's just accelerate, jump, backflip
+Look up unity trails, see how those work, enable when you are going fast
 
 
 
 
 
-Make riding on the water, no ramps, feel good. Winning and losing
 
-Make it restart you automatically
-Zero out the torque when you restart
-Then, zero out torque when you rotate back. It feels back to release left arrow and then start rotating forwards again
-Add in a animation for when you are diving to indicate it
-Feels bad to not be able to go up the ramp
+
 
 
 

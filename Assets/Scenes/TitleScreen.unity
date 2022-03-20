@@ -229,7 +229,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'WaveRace 2D
 
-    Demo 1.1'
+    Demo 1.2'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}
   m_sharedMaterial: {fileID: -8438218881289682481, guid: 979bfe6c76b314119bd564b956e1cf78, type: 2}

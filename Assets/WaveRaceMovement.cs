@@ -18,9 +18,12 @@ public class WaveRaceMovement : MonoBehaviour
     [SerializeField] private Transform startPosition;
     [SerializeField] private Transform topOfJetSki;
     [SerializeField] private Transform bottomOfJetSki;
+    [SerializeField] private float minimumSpeed = 5f;
     [SerializeField] private float maxSpeed = 10f;
+    [SerializeField] private float maxMaxSpeed = 12f; 
     [SerializeField] private Timer timer;
-    [SerializeField] private TMP_Text powerMeter;
+    [SerializeField] private float powerMeterDownTimer = 5f;
+    //[SerializeField] private TMP_Text powerMeter;
 
     public bool knockedOff;
     public bool m_Grounded;
@@ -32,6 +35,8 @@ public class WaveRaceMovement : MonoBehaviour
     public float flipCounter1;
     public float flipCounter2;
     public int numberFlips;
+
+    private float powerMeterCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -49,10 +54,17 @@ public class WaveRaceMovement : MonoBehaviour
         timer.RestartTimer();
         flipCounter1 = flipCounter2 = 0f;
         numberFlips = 0;
-        UpdateMaxSpeed();
+        maxSpeed = minimumSpeed;
+        ChangeMaxSpeed(0);
+        FindObjectOfType<OnOffUI>().HideUI();
     }
 
-    
+    void Update()
+    {
+        PowerMeterDown();
+
+    }
+
     void FixedUpdate() // Adjusting Rigidbody. Use force, same time between calls
     {
 
@@ -83,7 +95,6 @@ public class WaveRaceMovement : MonoBehaviour
         {
             transform.position = startPosition.position;
             ResetJetSki();
-            FindObjectOfType<EndGameUI>().HideUI();
         }
 
         if (knockedOff)
@@ -91,7 +102,7 @@ public class WaveRaceMovement : MonoBehaviour
             rigidBody.AddForce(new Vector2(0f, -100) * Time.deltaTime);
         }
 
-        rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity, maxSpeed);
+        rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity, maxSpeed); // This is where the max speed gets applied
 
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
@@ -133,11 +144,6 @@ public class WaveRaceMovement : MonoBehaviour
         CheckForBackflip();
     }
 
-    private void Update() // Simple timers, receiving input
-    { 
-        
-
-    }
 
     private void LimitAngularVelocity()
     {
@@ -151,7 +157,7 @@ public class WaveRaceMovement : MonoBehaviour
     public int GetCurrentSpeed()
     {
         //float speedAsFloat = (rigidBody.velocity.magnitude / maxSpeed) * 110f;
-        float speedAsFloat = (rigidBody.velocity.magnitude) * 10;
+        float speedAsFloat = (rigidBody.velocity.magnitude) * 10 + 4;
         return (int)Math.Floor(speedAsFloat);
 
         // Power; 5.2, max speed = 52 mph
@@ -163,7 +169,7 @@ public class WaveRaceMovement : MonoBehaviour
         knockedOff = true;
         GetComponent<SpriteRenderer>().color = new Color32(150, 50, 50, 255);
 
-        FindObjectOfType<EndGameUI>().ShowRestartDialog();
+        FindObjectOfType<EndOfRaceScoring>().EndRaceGiveScore(-1f);
     }
 
     private void CheckForBackflip()
@@ -175,45 +181,41 @@ public class WaveRaceMovement : MonoBehaviour
             flipCounter1 = rigidBody.rotation;
         }
 
-        if (flipCounter2 >= 360)
+        if (flipCounter2 >= 360) // they did a backflip!
         {
             flipCounter2 = 0;
             numberFlips += 1;
-            UpdateMaxSpeed();
+            powerMeterCounter = 0f; // Reset the power meter down
+            ChangeMaxSpeed(1);
         }
 
     }
 
-    private void UpdateMaxSpeed()
+    private void ChangeMaxSpeed(float howMuch)
     {
-        /*
-        switch(numberFlips)
+        // This updates the max speed based on how many flips have been done, and updates the power UI
+
+        maxSpeed += howMuch;
+
+        if (maxSpeed > maxMaxSpeed)
+            maxSpeed = maxMaxSpeed;
+
+        //powerMeter.text = "Power: " + maxSpeed;
+        FindObjectOfType<MeterUI>().ChangeCurrentValue((int)maxSpeed - (int)minimumSpeed);
+    }
+
+    private void PowerMeterDown()
+    {
+        // This reduces the power meter on a timer regularly
+        powerMeterCounter += Time.deltaTime;
+
+        if (powerMeterCounter > powerMeterDownTimer)
         {
-            case 0:
-                maxSpeed = 5.25;
-                break;
-            case 1:
-                maxSpeed = 6;
-                break;
-            case 2:
-                maxSpeed = 7;
-                break;
-            case 3:
-                maxSpeed = 8;
-                break;
-            case 4:
-                maxSpeed = 9;
-                break;
-            default:
-                if (numberFlips >= 5)
-                    maxSpeed = 10;
-                break;
+            powerMeterCounter = 0f; // Reset
+            if (maxSpeed > minimumSpeed)
+                ChangeMaxSpeed(-1);
+            
         }
-        */
-
-        maxSpeed = 5 + numberFlips * 0.3f;
-
-        powerMeter.text = "Power: " + maxSpeed;
     }
 }
 
