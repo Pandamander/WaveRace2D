@@ -32,11 +32,7 @@ public class GameManager : MonoBehaviour
  * 
 
 DONE:
-- Ending Class
-- Check time
-- Serializable values of times and medals
-- Change the text base don the medals
-- Press R to restart
+
 
 
 
@@ -44,7 +40,6 @@ DONE:
 NEXT UP:
 Level structure:
 Have it say ready set GO and then timer starts
-Have it give you a medal at the end based on your time
 - Press L to go to level select
 - Store the medal in a instanced object
 

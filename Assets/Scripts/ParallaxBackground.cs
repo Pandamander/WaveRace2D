@@ -65,7 +65,7 @@ public class ParallaxBackground : MonoBehaviour {
 		timeCounter += Time.deltaTime;
 
 		float newPosition = Time.deltaTime / 100 * scrollSpeed;
-		//Debug.Log(transform.position.x + ", " + newPosition + ", " + worldUnitsOfSize);
+		//Debug.Log(transform.position.x + ", " + newPosition + ", " + worldUnitsOfSize); // If worldUnitsOfSize is 0, perhaps there is not a SpriteRenderer on the obj
 		transform.position = new Vector3(Mathf.Repeat(transform.position.x + newPosition, worldUnitsOfSize * transform.localScale.x),
 			transform.position.y,
 			transform.position.z)

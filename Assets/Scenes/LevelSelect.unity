@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3da06b6232f44cc0a223b4dff732c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whichLevel: SampleScene
+  whichLevel: Main
   levelLocked: 0
 --- !u!114 &179252907
 MonoBehaviour:

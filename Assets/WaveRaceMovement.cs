@@ -67,9 +67,8 @@ public class WaveRaceMovement : MonoBehaviour
 
     void FixedUpdate() // Adjusting Rigidbody. Use force, same time between calls
     {
-
         // Accelerate. Only works if not knocked off
-        if (Input.GetKey(KeyCode.RightArrow) && !knockedOff)
+        if (Input.GetKey(KeyCode.UpArrow) && !knockedOff)
         {
             if (m_Grounded) //if on the water
             {
