@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
  * 
 
 DONE:
+Make the power meter into a visual meter
+Make it so that hitting acceleration is what uses it up, not a timer
 
 
 
@@ -43,10 +45,11 @@ Have it say ready set GO and then timer starts
 - Press L to go to level select
 - Store the medal in a instanced object
 
-Make the level longer and more fun
-
 
 Gameplay:
+Make a timer to get to the finish line that counts down
+Make checkpoints that give you more time
+
 Have it say NICE! when you flip
 
 
@@ -58,7 +61,6 @@ Have you get style points
 
 
 Visuals:
-Do Cooper's sprites
 Look up unity trails, see how those work, enable when you are going fast
 
 

@@ -20,9 +20,11 @@ public class WaveRaceMovement : MonoBehaviour
     [SerializeField] private Transform bottomOfJetSki;
     [SerializeField] private float minimumSpeed = 5f;
     [SerializeField] private float maxSpeed = 10f;
-    [SerializeField] private float maxMaxSpeed = 12f; 
+    [SerializeField] private float maxMaxSpeed = 12f;
+    [SerializeField] private float powerPerFlip = 10f;
     [SerializeField] private Timer timer;
-    [SerializeField] private float powerMeterDownTimer = 5f;
+    [SerializeField] private float powerDrainSpeed = -1f;
+    [SerializeField] private HealthBar powerMeterUI;
     //[SerializeField] private TMP_Text powerMeter;
 
     public bool knockedOff;
@@ -61,11 +63,11 @@ public class WaveRaceMovement : MonoBehaviour
 
     void Update()
     {
-        PowerMeterDown();
+        //PowerMeterDown();
 
     }
 
-    void FixedUpdate() // Adjusting Rigidbody. Use force, same time between calls
+    void FixedUpdate() // Runs every 0.02 seconds. Adjusting Rigidbody. Use force, same time between calls
     {
         // Accelerate. Only works if not knocked off
         if (Input.GetKey(KeyCode.UpArrow) && !knockedOff)
@@ -79,7 +81,8 @@ public class WaveRaceMovement : MonoBehaviour
                 rigidBody.AddForce(new Vector2(0f, diveSpeed) * Time.deltaTime); // dive down
                 rigidBody.AddTorque(forwardRotationSpeed); // Tilt forward
             }
-            
+
+            ChangeMaxSpeed(powerDrainSpeed); // Accelerating uses up the power meter
         }
 
         // Backflip
@@ -185,7 +188,7 @@ public class WaveRaceMovement : MonoBehaviour
             flipCounter2 = 0;
             numberFlips += 1;
             powerMeterCounter = 0f; // Reset the power meter down
-            ChangeMaxSpeed(1);
+            ChangeMaxSpeed(powerPerFlip);
         }
 
     }
@@ -198,17 +201,19 @@ public class WaveRaceMovement : MonoBehaviour
 
         if (maxSpeed > maxMaxSpeed)
             maxSpeed = maxMaxSpeed;
+        if (maxSpeed < minimumSpeed)
+            maxSpeed = minimumSpeed;
 
         //powerMeter.text = "Power: " + maxSpeed;
-        FindObjectOfType<MeterUI>().ChangeCurrentValue((int)maxSpeed - (int)minimumSpeed);
+        powerMeterUI.SetHealth(maxSpeed - minimumSpeed); // Set the UI
     }
 
     private void PowerMeterDown()
     {
         // This reduces the power meter on a timer regularly
-        powerMeterCounter += Time.deltaTime;
+        //powerMeterCounter += Time.deltaTime;
 
-        if (powerMeterCounter > powerMeterDownTimer)
+        if (powerMeterCounter > powerDrainSpeed)
         {
             powerMeterCounter = 0f; // Reset
             if (maxSpeed > minimumSpeed)
@@ -218,3 +223,11 @@ public class WaveRaceMovement : MonoBehaviour
     }
 }
 
+
+/*
+Make the power meter number into a float
+Make it so thatit goes up and down
+Make it so that it is displayed in a serialized object
+
+Make it so that the acceleration 
+ */
