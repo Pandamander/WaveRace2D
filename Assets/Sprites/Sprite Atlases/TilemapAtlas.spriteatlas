@@ -1142,5 +1142,5 @@ SpriteAtlas:
   - waverace2d_clouds_tilemap_169
   - waverace2d_clouds_tilemap_168
   m_RenderDataMap: {}
-  m_Tag: TstTilemapAtlas
+  m_Tag: TilemapAtlas
   m_IsVariant: 0
