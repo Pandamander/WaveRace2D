@@ -30,7 +30,7 @@ public class WaveRaceMovement : MonoBehaviour
     public bool knockedOff;
     public bool m_Grounded;
     private bool m_LandOnHead;
-    private float k_GroundedRadius = 0.05f;
+    private float k_GroundedRadius = 0.5f;
 
     [SerializeField] private LayerMask m_WhatIsGround;	// A mask determining what is ground to the character
 
@@ -70,7 +70,7 @@ public class WaveRaceMovement : MonoBehaviour
     void FixedUpdate() // Runs every 0.02 seconds. Adjusting Rigidbody. Use force, same time between calls
     {
         // Accelerate. Only works if not knocked off
-        if (Input.GetKey(KeyCode.UpArrow) && !knockedOff)
+        if ((Input.GetKey(KeyCode.UpArrow) && !knockedOff) || (Input.GetKey(KeyCode.RightArrow) && !knockedOff))
         {
             if (m_Grounded) //if on the water
             {
