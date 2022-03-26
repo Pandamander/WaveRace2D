@@ -7,13 +7,14 @@ public class Timer : MonoBehaviour
 {
     public float timerValue;
     public bool timerRunning = true;
+    [SerializeField] public float startingValue = 30f;
     [SerializeField] private TMP_Text timerText;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        RestartTimer();
     }
 
     // Update is called once per frame
@@ -21,7 +22,9 @@ public class Timer : MonoBehaviour
     {
         if (timerRunning)
         {
-            timerValue += Time.deltaTime;
+            timerValue -= Time.deltaTime;
+            if (timerValue < 0f)
+                TimerRunOut();
         }
 
         timerText.text = timerValue.ToString("0.0");
@@ -29,7 +32,7 @@ public class Timer : MonoBehaviour
 
     public void RestartTimer()
     {
-        timerValue = 0f;
+        timerValue = startingValue;
         timerRunning = true;
     }
 
@@ -41,5 +44,18 @@ public class Timer : MonoBehaviour
     public void StopTimer()
     {
         timerRunning = false;
+    }
+
+    public void AddTime(float howMuch)
+    {
+        timerValue += howMuch;
+    }
+
+    public void TimerRunOut()
+    {
+        timerValue = 0f; // set to 0 in case it went a little bit negative
+        FindObjectOfType<EndOfRaceScoring>().OutOfTime();
+        FindObjectOfType<WaveRaceMovement>().StopEngine();
+
     }
 }

@@ -23,6 +23,12 @@ public class EndOfRaceScoring : MonoBehaviour
         
     }
 
+    public void OutOfTime()
+    {
+        endingDialog.ShowUI();
+        endingText.text = "Not fast enough! Do more backflips to go faster!" +
+                    "\n\nPress [R] to Restart";
+    }
 
     public void EndRaceGiveScore(float finalTime)
     {

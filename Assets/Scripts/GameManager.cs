@@ -40,15 +40,12 @@ Make it so that hitting acceleration is what uses it up, not a timer
 
 
 NEXT UP:
-Level structure:
-Have it say ready set GO and then timer starts
-- Press L to go to level select
-- Store the medal in a instanced object
-
-
-Gameplay:
 Make a timer to get to the finish line that counts down
 Make checkpoints that give you more time
+
+Gameplay:
+
+
 
 Have it say NICE! when you flip
 

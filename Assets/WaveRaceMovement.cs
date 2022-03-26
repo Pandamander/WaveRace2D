@@ -27,7 +27,7 @@ public class WaveRaceMovement : MonoBehaviour
     [SerializeField] private HealthBar powerMeterUI;
     //[SerializeField] private TMP_Text powerMeter;
 
-    public bool knockedOff;
+    public bool engineStopped;
     public bool m_Grounded;
     private bool m_LandOnHead;
     private float k_GroundedRadius = 0.5f;
@@ -48,7 +48,7 @@ public class WaveRaceMovement : MonoBehaviour
 
     void ResetJetSki()
     {
-        knockedOff = false;
+        engineStopped = false;
         rigidBody.velocity = Vector3.zero;
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         rigidBody.angularVelocity = 0f;
@@ -59,6 +59,13 @@ public class WaveRaceMovement : MonoBehaviour
         maxSpeed = minimumSpeed;
         ChangeMaxSpeed(0);
         FindObjectOfType<OnOffUI>().HideUI();
+
+        var buoys = GameObject.FindObjectsOfType<Buoy>();
+        var objectCount = buoys.Length;
+        foreach (var obj in buoys)
+        {
+            obj.ResetBuoy();
+        }
     }
 
     void Update()
@@ -67,10 +74,15 @@ public class WaveRaceMovement : MonoBehaviour
 
     }
 
+    public void StopEngine()
+    {
+        engineStopped = true;
+    }    
+
     void FixedUpdate() // Runs every 0.02 seconds. Adjusting Rigidbody. Use force, same time between calls
     {
         // Accelerate. Only works if not knocked off
-        if ((Input.GetKey(KeyCode.UpArrow) && !knockedOff) || (Input.GetKey(KeyCode.RightArrow) && !knockedOff))
+        if ((Input.GetKey(KeyCode.UpArrow) && !engineStopped) || (Input.GetKey(KeyCode.RightArrow) && !engineStopped))
         {
             if (m_Grounded) //if on the water
             {
@@ -86,7 +98,7 @@ public class WaveRaceMovement : MonoBehaviour
         }
 
         // Backflip
-        if (Input.GetKey(KeyCode.LeftArrow) && !knockedOff)
+        if (Input.GetKey(KeyCode.LeftArrow) && !engineStopped)
         {
             rigidBody.AddForce(new Vector2(0f, backFloatSpeed) * Time.deltaTime); // float up a little bit
             rigidBody.AddTorque(backRotationSpeed);
@@ -99,7 +111,7 @@ public class WaveRaceMovement : MonoBehaviour
             ResetJetSki();
         }
 
-        if (knockedOff)
+        if (engineStopped)
         {
             rigidBody.AddForce(new Vector2(0f, -100) * Time.deltaTime);
         }
@@ -168,7 +180,7 @@ public class WaveRaceMovement : MonoBehaviour
     public void LandedOnHead()
     {
         m_LandOnHead = true;
-        knockedOff = true;
+        engineStopped = true;
         GetComponent<SpriteRenderer>().color = new Color32(150, 50, 50, 255);
 
         FindObjectOfType<EndOfRaceScoring>().EndRaceGiveScore(-1f);
