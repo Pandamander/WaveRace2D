@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CheckpointClip
+  m_Name: FinishClip
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 6bf8f3ad2ba1e47938617447c0855150, type: 3}
+      value: {fileID: 21300000, guid: 0f66f3cc42bb74a2e8f5486ea67596fb, type: 3}
     - time: 0.1
-      value: {fileID: 21300000, guid: d8c1539281e5043dcae0f5a56612e4c5, type: 3}
+      value: {fileID: 21300000, guid: 7970233c0f38c4eb69eecc16327ea70f, type: 3}
     - time: 0.2
-      value: {fileID: 21300000, guid: 34b46258dcd8f4e0daed93b3e6785d90, type: 3}
+      value: {fileID: 21300000, guid: 1212c5a18b10b4baa8b51cff55b752a4, type: 3}
     - time: 0.3
-      value: {fileID: 21300000, guid: 9a880caa5b7ce4239aa005137ec933c4, type: 3}
+      value: {fileID: 21300000, guid: db602b476b38147dd9ee81586b8db042, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 6bf8f3ad2ba1e47938617447c0855150, type: 3}
-    - {fileID: 21300000, guid: d8c1539281e5043dcae0f5a56612e4c5, type: 3}
-    - {fileID: 21300000, guid: 34b46258dcd8f4e0daed93b3e6785d90, type: 3}
-    - {fileID: 21300000, guid: 9a880caa5b7ce4239aa005137ec933c4, type: 3}
+    - {fileID: 21300000, guid: 0f66f3cc42bb74a2e8f5486ea67596fb, type: 3}
+    - {fileID: 21300000, guid: 7970233c0f38c4eb69eecc16327ea70f, type: 3}
+    - {fileID: 21300000, guid: 1212c5a18b10b4baa8b51cff55b752a4, type: 3}
+    - {fileID: 21300000, guid: db602b476b38147dd9ee81586b8db042, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
