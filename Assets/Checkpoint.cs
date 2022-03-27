@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Buoy : MonoBehaviour
+public class Checkpoint : MonoBehaviour
 {
     [SerializeField] private WaveRaceMovement player;
     [SerializeField] private Timer timer;
@@ -29,10 +29,11 @@ public class Buoy : MonoBehaviour
     void CrossCheckPoint()
     {
         checkPointCrossed = true;
+        FindObjectOfType<HypeText>().ShowHypeText("CHECKPOINT +" + timeToAdd.ToString() + "s");
         timer.AddTime(timeToAdd);
     }
 
-    public void ResetBuoy()
+    public void ResetCheckpoint()
     {
         checkPointCrossed = false;
     }

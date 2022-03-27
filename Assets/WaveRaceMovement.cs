@@ -71,11 +71,11 @@ public class WaveRaceMovement : MonoBehaviour
 
         FindObjectOfType<OnOffUI>().HideUI();
 
-        var buoys = GameObject.FindObjectsOfType<Buoy>();
-        var objectCount = buoys.Length;
-        foreach (var obj in buoys) // loops through each buoy and resets them so they aren't marked as passed
+        var checkpoints = GameObject.FindObjectsOfType<Checkpoint>();
+        var objectCount = checkpoints.Length;
+        foreach (var obj in checkpoints) // loops through each buoy and resets them so they aren't marked as passed
         {
-            obj.ResetBuoy();
+            obj.ResetCheckpoint();
         }
     }
 
@@ -216,6 +216,7 @@ public class WaveRaceMovement : MonoBehaviour
             //ChangeMaxSpeed(powerPerFlip);
             SetMaxSpeed(topSpeed);
             ChangePowerMeter(powerPerFlip);
+            FindObjectOfType<HypeText>().ShowHypeText("NICE FLIP!");
 
         }
 
