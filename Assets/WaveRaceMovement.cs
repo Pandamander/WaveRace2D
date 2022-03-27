@@ -21,11 +21,18 @@ public class WaveRaceMovement : MonoBehaviour
     [SerializeField] private float minimumSpeed = 5f;
     [SerializeField] private float maxSpeed = 10f;
     [SerializeField] private float maxMaxSpeed = 12f;
+    [SerializeField] private float topSpeed = 70f;
+    [SerializeField] private float baseSpeed = 20f;
+    
     [SerializeField] private float powerPerFlip = 10f;
+
     [SerializeField] private Timer timer;
     [SerializeField] private float powerDrainSpeed = -1f;
     [SerializeField] private HealthBar powerMeterUI;
     //[SerializeField] private TMP_Text powerMeter;
+
+    private float powerMeterLeft = 10f;
+    [SerializeField] private float maxPowerMeter = 10f;
 
     public bool engineStopped;
     public bool m_Grounded;
@@ -56,13 +63,17 @@ public class WaveRaceMovement : MonoBehaviour
         timer.RestartTimer();
         flipCounter1 = flipCounter2 = 0f;
         numberFlips = 0;
-        maxSpeed = minimumSpeed;
-        ChangeMaxSpeed(0);
+        //maxSpeed = minimumSpeed;
+
+        //ChangeMaxSpeed(0);
+        SetMaxSpeed(baseSpeed);
+        SetPowerMeter(0f);
+
         FindObjectOfType<OnOffUI>().HideUI();
 
         var buoys = GameObject.FindObjectsOfType<Buoy>();
         var objectCount = buoys.Length;
-        foreach (var obj in buoys)
+        foreach (var obj in buoys) // loops through each buoy and resets them so they aren't marked as passed
         {
             obj.ResetBuoy();
         }
@@ -94,7 +105,8 @@ public class WaveRaceMovement : MonoBehaviour
                 rigidBody.AddTorque(forwardRotationSpeed); // Tilt forward
             }
 
-            ChangeMaxSpeed(powerDrainSpeed); // Accelerating uses up the power meter
+            //ChangeMaxSpeed(powerDrainSpeed); // Accelerating uses up the power meter
+            ChangePowerMeter(powerDrainSpeed);
         }
 
         // Backflip
@@ -200,46 +212,68 @@ public class WaveRaceMovement : MonoBehaviour
             flipCounter2 = 0;
             numberFlips += 1;
             powerMeterCounter = 0f; // Reset the power meter down
-            ChangeMaxSpeed(powerPerFlip);
+
+            //ChangeMaxSpeed(powerPerFlip);
+            SetMaxSpeed(topSpeed);
+            ChangePowerMeter(powerPerFlip);
+
         }
 
     }
 
-    private void ChangeMaxSpeed(float howMuch)
+    private void SetMaxSpeed(float howMuch)
     {
         // This updates the max speed based on how many flips have been done, and updates the power UI
-
-        maxSpeed += howMuch;
+        
+        maxSpeed = howMuch;
 
         if (maxSpeed > maxMaxSpeed)
             maxSpeed = maxMaxSpeed;
         if (maxSpeed < minimumSpeed)
             maxSpeed = minimumSpeed;
 
-        //powerMeter.text = "Power: " + maxSpeed;
-        powerMeterUI.SetHealth(maxSpeed - minimumSpeed); // Set the UI
+        //powerMeterUI.SetHealth(powerMeterLeft);
+
     }
 
-    private void PowerMeterDown()
+    private void SetPowerMeter(float howMuch)
     {
-        // This reduces the power meter on a timer regularly
-        //powerMeterCounter += Time.deltaTime;
+        powerMeterLeft = howMuch;
 
-        if (powerMeterCounter > powerDrainSpeed)
+        if (powerMeterLeft <= 0)
         {
-            powerMeterCounter = 0f; // Reset
-            if (maxSpeed > minimumSpeed)
-                ChangeMaxSpeed(-1);
-            
+            powerMeterLeft = 0;
+            maxSpeed = baseSpeed;
         }
+
+        if (powerMeterLeft > maxPowerMeter)
+        {
+            powerMeterLeft = maxPowerMeter;
+        }
+
+        powerMeterUI.SetHealth(powerMeterLeft);
     }
+
+    private void ChangePowerMeter(float howMuch)
+    {
+        powerMeterLeft += howMuch;
+        
+
+        if (powerMeterLeft <= 0)
+        {
+            powerMeterLeft = 0;
+            maxSpeed = baseSpeed;
+        }
+
+        if (powerMeterLeft > maxPowerMeter)
+        {
+            powerMeterLeft = maxPowerMeter;
+        }
+
+        powerMeterUI.SetHealth(powerMeterLeft); // Set the UI
+    }
+
+    
 }
 
 
-/*
-Make the power meter number into a float
-Make it so thatit goes up and down
-Make it so that it is displayed in a serialized object
-
-Make it so that the acceleration 
- */

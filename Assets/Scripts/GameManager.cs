@@ -32,16 +32,26 @@ public class GameManager : MonoBehaviour
  * 
 
 DONE:
-Make the power meter into a visual meter
-Make it so that hitting acceleration is what uses it up, not a timer
+
 
 
 
 
 
 NEXT UP:
-Make a timer to get to the finish line that counts down
-Make checkpoints that give you more time
+Text highlights
+Ending scores
+Try 3 separate emitters
+Mini map
+
+
+Streak for when at full speed
+Back tip of jetski shoots
+Fall into the water when you
+
+Stop wave movement
+can finish line after dying
+
 
 Gameplay:
 
@@ -62,7 +72,18 @@ Look up unity trails, see how those work, enable when you are going fast
 
 
 
+William Notes:
+Checkpoint
+Add in UI text
+Course map
 
+Spray from jetski
+Ramps
+Check
+
+Not gonna do:
+Excite Bike lanes
+Multiple tricks
 
 
 
