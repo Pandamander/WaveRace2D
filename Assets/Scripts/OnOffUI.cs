@@ -13,7 +13,6 @@ public class OnOffUI : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(EndUIToTurnOffOn);
         EndUIToTurnOffOn.SetActive(false);
         
     }
