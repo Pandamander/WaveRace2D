@@ -32,17 +32,12 @@ public class GameManager : MonoBehaviour
  * 
 
 DONE:
-Updating movement
-Levels
-Stop wave movement
-
+Text highlights: Flip, checkpoint
 
 
 
 
 NEXT UP:
-Text highlights: Flip, checkpoint
-Pass a checkpoint
 
 Ending scores
 Try 3 separate emitters - Come back to it

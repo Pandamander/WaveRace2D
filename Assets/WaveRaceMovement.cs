@@ -29,6 +29,7 @@ public class WaveRaceMovement : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private float powerDrainSpeed = -1f;
     [SerializeField] private HealthBar powerMeterUI;
+    [SerializeField] private ParticleSystem wakeFX;
     //[SerializeField] private TMP_Text powerMeter;
 
     private float powerMeterLeft = 10f;
@@ -81,8 +82,14 @@ public class WaveRaceMovement : MonoBehaviour
 
     void Update()
     {
-        //PowerMeterDown();
-
+        if (m_Grounded)
+        {
+            wakeFX.Play();
+        }
+        else
+        {
+            wakeFX.Stop();
+        }
     }
 
     public void StopEngine()
