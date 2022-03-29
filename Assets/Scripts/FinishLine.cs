@@ -15,7 +15,7 @@ public class FinishLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.x > transform.position.x) // if they've crossed the finish line
+        if (player.transform.position.x > transform.position.x && timer.timerRunning) // if they've crossed the finish line, and timer is still running
         {
             EndRace();
         }

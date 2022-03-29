@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour
         if (timerRunning)
         {
             timerValue -= Time.deltaTime;
-            if (timerValue < 0f)
+            if (timerValue < 0f && timerRunning)
                 TimerRunOut();
         }
 
@@ -53,9 +53,11 @@ public class Timer : MonoBehaviour
 
     public void TimerRunOut()
     {
+        timerRunning = false;
         timerValue = 0f; // set to 0 in case it went a little bit negative
         FindObjectOfType<EndOfRaceScoring>().OutOfTime();
         FindObjectOfType<WaveRaceMovement>().StopEngine();
+        FindObjectOfType<AudioManager>().Play("OuttaTime");
 
     }
 }

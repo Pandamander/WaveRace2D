@@ -21,7 +21,6 @@ public class HypeText : OnOffUI
     {
         if (blinking)
         {
-            Debug.Log("Blinking" + counter);
 
             counter += Time.deltaTime;
             if (counter > blinkDuration)

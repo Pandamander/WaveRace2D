@@ -50,6 +50,9 @@ Add button to go back to level unlock
 
 
 
+Bugs:
+Have the timer start when you start
+
 
 P2:
 Show trophies earned 

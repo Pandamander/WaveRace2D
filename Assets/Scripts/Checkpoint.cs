@@ -31,6 +31,7 @@ public class Checkpoint : MonoBehaviour
         checkPointCrossed = true;
         FindObjectOfType<HypeText>().ShowHypeText("CHECKPOINT +" + timeToAdd.ToString() + "s");
         timer.AddTime(timeToAdd);
+        FindObjectOfType<AudioManager>().Play("Checkpoint");
     }
 
     public void ResetCheckpoint()

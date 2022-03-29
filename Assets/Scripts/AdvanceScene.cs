@@ -19,6 +19,7 @@ public class AdvanceScene : MonoBehaviour
     // Update is called once per frame
     void NextScene()
     {
+        FindObjectOfType<AudioManager>().Play("MenuClick");
         SceneManager.LoadScene(nextSceneName);
     }
 

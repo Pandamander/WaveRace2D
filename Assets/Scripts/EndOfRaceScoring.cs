@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using System;
 
 public class EndOfRaceScoring : MonoBehaviour
 {
 
     [SerializeField] TMP_Text endingText;
+    [SerializeField] Image trophyImage;
     [SerializeField] float[] winningTimes;
+    [SerializeField] Sprite[] trophySprites;
     private OnOffUI endingDialog;
 
     // Start is called before the first frame update
@@ -28,6 +31,7 @@ public class EndOfRaceScoring : MonoBehaviour
         endingDialog.ShowUI();
         endingText.text = "Not fast enough! Do more backflips to go faster!" +
                     "\n\nPress [R] to Restart";
+        trophyImage.sprite = trophySprites[3];
     }
 
     public void EndRaceGiveScore(float finalTime)
@@ -38,28 +42,37 @@ public class EndOfRaceScoring : MonoBehaviour
         {
             if (finalTime < 0) // If they lost or fell over, use -1
             {
-                endingText.text = "Ouch!" +
+                endingText.text = "Ouch! Try not to land on your head!" +
                     "\n\nPress [R] to Restart";
+                FindObjectOfType<AudioManager>().Play("FallOff");
+                trophyImage.sprite = trophySprites[3];
             }
-            else if (finalTime < winningTimes[0])
+            else if (finalTime > winningTimes[0])
             {
                 endingText.text = "Gold Trophy! Amazing job!!" +
                     "\n\nPress [R] to Restart";
+                FindObjectOfType<AudioManager>().Play("GoldFinish");
+                trophyImage.sprite = trophySprites[2];
             }
-            else if (finalTime < winningTimes[1])
+            else if (finalTime > winningTimes[1])
             {
                 endingText.text = "Silver Trophy! Great job!" +
                     "\n\nPress [R] to Restart";
+                FindObjectOfType<AudioManager>().Play("Finish");
+                trophyImage.sprite = trophySprites[1];
             }
-            else if (finalTime < winningTimes[2])
+            else if (finalTime > winningTimes[2])
             {
                 endingText.text = "Bronze Trophy! Good job!" +
                     "\n\nPress [R] to Restart";
+                FindObjectOfType<AudioManager>().Play("Finish");
+                trophyImage.sprite = trophySprites[0];
             }
             else
             {
                 endingText.text = "Too slow...try to improve." +
                     "\n\nPress [R] to Restart";
+                FindObjectOfType<AudioManager>().Play("Finish");
             }
         }
         catch (IndexOutOfRangeException e)

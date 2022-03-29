@@ -35,7 +35,7 @@ public class WaveRaceMovement : MonoBehaviour
     private float powerMeterLeft = 10f;
     [SerializeField] private float maxPowerMeter = 10f;
 
-    public bool engineStopped;
+    public bool raceStopped;
     public bool m_Grounded;
     private bool m_LandOnHead;
     private float k_GroundedRadius = 0.5f;
@@ -56,7 +56,7 @@ public class WaveRaceMovement : MonoBehaviour
 
     void ResetJetSki()
     {
-        engineStopped = false;
+        raceStopped = false;
         rigidBody.velocity = Vector3.zero;
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         rigidBody.angularVelocity = 0f;
@@ -94,13 +94,13 @@ public class WaveRaceMovement : MonoBehaviour
 
     public void StopEngine()
     {
-        engineStopped = true;
+        raceStopped = true;
     }    
 
     void FixedUpdate() // Runs every 0.02 seconds. Adjusting Rigidbody. Use force, same time between calls
     {
         // Accelerate. Only works if not knocked off
-        if ((Input.GetKey(KeyCode.UpArrow) && !engineStopped) || (Input.GetKey(KeyCode.RightArrow) && !engineStopped))
+        if ((Input.GetKey(KeyCode.UpArrow) && !raceStopped) || (Input.GetKey(KeyCode.RightArrow) && !raceStopped))
         {
             if (m_Grounded) //if on the water
             {
@@ -114,10 +114,16 @@ public class WaveRaceMovement : MonoBehaviour
 
             //ChangeMaxSpeed(powerDrainSpeed); // Accelerating uses up the power meter
             ChangePowerMeter(powerDrainSpeed);
+            FindObjectOfType<AudioManager>().Play("Engine");
+        }
+
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            FindObjectOfType<AudioManager>().StopPlaying("Engine");
         }
 
         // Backflip
-        if (Input.GetKey(KeyCode.LeftArrow) && !engineStopped)
+        if (Input.GetKey(KeyCode.LeftArrow) && !raceStopped)
         {
             rigidBody.AddForce(new Vector2(0f, backFloatSpeed) * Time.deltaTime); // float up a little bit
             rigidBody.AddTorque(backRotationSpeed);
@@ -130,7 +136,7 @@ public class WaveRaceMovement : MonoBehaviour
             ResetJetSki();
         }
 
-        if (engineStopped)
+        if (raceStopped)
         {
             rigidBody.AddForce(new Vector2(0f, -100) * Time.deltaTime);
         }
@@ -198,11 +204,16 @@ public class WaveRaceMovement : MonoBehaviour
 
     public void LandedOnHead()
     {
-        m_LandOnHead = true;
-        engineStopped = true;
-        GetComponent<SpriteRenderer>().color = new Color32(150, 50, 50, 255);
+        if (!m_LandOnHead && !raceStopped) // should only happen once
+        {
+            m_LandOnHead = true;
+            raceStopped = true;
+            GetComponent<SpriteRenderer>().color = new Color32(150, 50, 50, 255);
+            // TODO: Here is where we put the animation of the guy falling off
 
-        FindObjectOfType<EndOfRaceScoring>().EndRaceGiveScore(-1f);
+            FindObjectOfType<EndOfRaceScoring>().EndRaceGiveScore(-1f);
+        }
+        
     }
 
     private void CheckForBackflip()
@@ -224,6 +235,7 @@ public class WaveRaceMovement : MonoBehaviour
             SetMaxSpeed(topSpeed);
             ChangePowerMeter(powerPerFlip);
             FindObjectOfType<HypeText>().ShowHypeText("NICE FLIP!");
+            FindObjectOfType<AudioManager>().Play("Flip");
 
         }
 
