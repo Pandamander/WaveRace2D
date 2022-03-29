@@ -32,22 +32,20 @@ public class GameManager : MonoBehaviour
  * 
 
 DONE:
-Text highlights: Flip, checkpoint
-Try 3 separate emitters - Come back to it
-Better looking title and level select
-SFX
-
-
- SFX from https://opengameart.org/content/nes-8-bit-sound-effects
-NEXT UP:
-Make trophy different depending on ending score
-Make 3 levels with differnet color
-Tune the levels
-Ending scores
 Add SFX
+Make trophy different depending on ending score
+
+ 
+NEXT UP:
+Make 3 levels with differnet color
+WASD Controls
+Tune the levels
+
 Add finish line sprite
 Add button to go back to level unlock
 
+
+SFX from https://opengameart.org/content/nes-8-bit-sound-effects
 
 
 Bugs:
