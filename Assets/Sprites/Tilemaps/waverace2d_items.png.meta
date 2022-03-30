@@ -115,10 +115,10 @@ TextureImporter:
       name: waverace2d_items_0
       rect:
         serializedVersion: 2
-        x: 38
+        x: 34
         y: 52
-        width: 6
-        height: 10
+        width: 13
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,10 +136,10 @@ TextureImporter:
       name: waverace2d_items_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 46
         y: 52
-        width: 8
-        height: 13
+        width: 13
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

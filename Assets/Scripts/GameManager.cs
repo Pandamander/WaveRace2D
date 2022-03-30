@@ -34,14 +34,11 @@ public class GameManager : MonoBehaviour
 DONE:
 Add SFX
 Make trophy different depending on ending score
-
+WASD Controls
  
 NEXT UP:
 Make 3 levels with differnet color
-WASD Controls
 Tune the levels
-
-Add finish line sprite
 Add button to go back to level unlock
 
 
