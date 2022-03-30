@@ -12,12 +12,12 @@ public class EndOfRaceScoring : MonoBehaviour
     [SerializeField] Image trophyImage;
     [SerializeField] float[] winningTimes;
     [SerializeField] Sprite[] trophySprites;
-    private OnOffUI endingDialog;
+    [SerializeField] private OnOffUI endingDialog;
 
     // Start is called before the first frame update
     void Start()
     {
-        endingDialog = FindObjectOfType<OnOffUI>();
+        
     }
 
     // Update is called once per frame
@@ -36,6 +36,7 @@ public class EndOfRaceScoring : MonoBehaviour
 
     public void EndRaceGiveScore(float finalTime)
     {
+        Debug.Log("End");
         endingDialog.ShowUI();
 
         try

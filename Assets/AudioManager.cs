@@ -30,7 +30,6 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         Play("Music");
-        Debug.Log("Start");
     }
 
     public void Play(string name)

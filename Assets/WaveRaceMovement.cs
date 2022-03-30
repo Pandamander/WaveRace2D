@@ -41,6 +41,7 @@ public class WaveRaceMovement : MonoBehaviour
     private float k_GroundedRadius = 0.5f;
 
     [SerializeField] private LayerMask m_WhatIsGround;	// A mask determining what is ground to the character
+    [SerializeField] private OnOffUI endingUI;
 
     public float flipCounter1;
     public float flipCounter2;
@@ -70,7 +71,7 @@ public class WaveRaceMovement : MonoBehaviour
         SetMaxSpeed(baseSpeed);
         SetPowerMeter(0f);
 
-        FindObjectOfType<OnOffUI>().HideUI();
+        endingUI.HideUI();
 
         var checkpoints = GameObject.FindObjectsOfType<Checkpoint>();
         var objectCount = checkpoints.Length;
@@ -82,14 +83,7 @@ public class WaveRaceMovement : MonoBehaviour
 
     void Update()
     {
-        if (m_Grounded)
-        {
-            wakeFX.Play();
-        }
-        else
-        {
-            wakeFX.Stop();
-        }
+        
     }
 
     public void StopEngine()
@@ -100,7 +94,7 @@ public class WaveRaceMovement : MonoBehaviour
     void FixedUpdate() // Runs every 0.02 seconds. Adjusting Rigidbody. Use force, same time between calls
     {
         // Accelerate. Only works if not knocked off
-        if ((Input.GetKey(KeyCode.UpArrow) && !raceStopped) || (Input.GetKey(KeyCode.RightArrow) && !raceStopped))
+        if ((Input.GetKey(KeyCode.D) && !raceStopped) || (Input.GetKey(KeyCode.RightArrow) && !raceStopped))
         {
             if (m_Grounded) //if on the water
             {
@@ -117,13 +111,13 @@ public class WaveRaceMovement : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Engine");
         }
 
-        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             FindObjectOfType<AudioManager>().StopPlaying("Engine");
         }
 
         // Backflip
-        if (Input.GetKey(KeyCode.LeftArrow) && !raceStopped)
+        if ((Input.GetKey(KeyCode.LeftArrow) && !raceStopped) || (Input.GetKey(KeyCode.A) && !raceStopped))
         {
             rigidBody.AddForce(new Vector2(0f, backFloatSpeed) * Time.deltaTime); // float up a little bit
             rigidBody.AddTorque(backRotationSpeed);
@@ -181,6 +175,15 @@ public class WaveRaceMovement : MonoBehaviour
 
         LimitAngularVelocity();
         CheckForBackflip();
+
+        if (m_Grounded)
+        {
+            wakeFX.Play();
+        }
+        else
+        {
+            wakeFX.Stop();
+        }
     }
 
 
