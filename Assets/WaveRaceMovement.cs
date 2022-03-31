@@ -57,6 +57,7 @@ public class WaveRaceMovement : MonoBehaviour
 
     void ResetJetSki()
     {
+        transform.position = startPosition.position;
         raceStopped = false;
         rigidBody.velocity = Vector3.zero;
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
@@ -81,10 +82,6 @@ public class WaveRaceMovement : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
 
     public void StopEngine()
     {
@@ -93,6 +90,8 @@ public class WaveRaceMovement : MonoBehaviour
 
     void FixedUpdate() // Runs every 0.02 seconds. Adjusting Rigidbody. Use force, same time between calls
     {
+        rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity, maxSpeed); // This is where the max speed gets applied
+
         // Accelerate. Only works if not knocked off
         if ((Input.GetKey(KeyCode.D) && !raceStopped) || (Input.GetKey(KeyCode.RightArrow) && !raceStopped))
         {
@@ -116,6 +115,12 @@ public class WaveRaceMovement : MonoBehaviour
             FindObjectOfType<AudioManager>().StopPlaying("Engine");
         }
 
+        if (Input.GetKeyUp(KeyCode.M))
+        {
+            transform.localScale = new Vector3(0.5f, 0.5f, 1);
+            ResetJetSki();
+        }
+
         // Backflip
         if ((Input.GetKey(KeyCode.LeftArrow) && !raceStopped) || (Input.GetKey(KeyCode.A) && !raceStopped))
         {
@@ -126,8 +131,12 @@ public class WaveRaceMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.R)) // reset. Need to move this to the Game Manager or Level Manager
         {
-            transform.position = startPosition.position;
             ResetJetSki();
+        }
+
+        if (Input.GetKey(KeyCode.L)) // reset. Need to move this to the Game Manager or Level Manager
+        {
+            FindObjectOfType<SelectLevel>().SelectNextLevel();
         }
 
         if (raceStopped)
@@ -135,7 +144,6 @@ public class WaveRaceMovement : MonoBehaviour
             rigidBody.AddForce(new Vector2(0f, -100) * Time.deltaTime);
         }
 
-        rigidBody.velocity = Vector3.ClampMagnitude(rigidBody.velocity, maxSpeed); // This is where the max speed gets applied
 
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
@@ -237,7 +245,7 @@ public class WaveRaceMovement : MonoBehaviour
             //ChangeMaxSpeed(powerPerFlip);
             SetMaxSpeed(topSpeed);
             ChangePowerMeter(powerPerFlip);
-            FindObjectOfType<HypeText>().ShowHypeText("NICE FLIP!");
+            PlayFlipHypeText();
             FindObjectOfType<AudioManager>().Play("Flip");
 
         }
@@ -296,6 +304,48 @@ public class WaveRaceMovement : MonoBehaviour
         powerMeterUI.SetHealth(powerMeterLeft); // Set the UI
     }
 
+
+    private void PlayFlipHypeText()
+    {
+        int i = UnityEngine.Random.Range(0, 9);
+        string s = "NICE FLIP!";
+
+        switch (i)
+        {
+            case 0:
+                s = "RADICAL FLIP!";
+                break;
+            case 1:
+                s = "GNARLY!";
+                break;
+            case 2:
+                s = "AWESOME!";
+                break;
+            case 3:
+                s = "NICE FLIP!";
+                break;
+            case 4:
+                s = "DUDE!";
+                break;
+            case 5:
+                s = "COWABUNGA!";
+                break;
+            case 6:
+                s = "WHOA!";
+                break;
+            case 7:
+                s = "DO A BARREL ROLL!";
+                break;
+            case 8:
+                s = "POWER UP!";
+                break;
+            case 9:
+                s = "BONSAI!";
+                break;
+        }
+
+        FindObjectOfType<HypeText>().ShowHypeText(s);
+    }
     
 }
 

@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: -2904150014774255628
     second: waverace2d_items_2
+  - first:
+      213: 1458087944701118539
+    second: waverace2d_items_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -170,6 +173,27 @@ TextureImporter:
       bones: []
       spriteID: 4ff5feac2f262b7d0800000000000000
       internalID: -2904150014774255628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waverace2d_items_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 128
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48803ba24b2c3410800000000000000
+      internalID: 1458087944701118539
       vertices: []
       indices: 
       edges: []

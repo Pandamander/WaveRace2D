@@ -32,29 +32,32 @@ public class GameManager : MonoBehaviour
  * 
 
 DONE:
-Add SFX
-Make trophy different depending on ending score
-WASD Controls
+Fix the trophy when you land on head
+Add button to go back to level unlock
+Secret back of the level area
+Random flip text
+Don't fall off the edge
+Tune the levels
  
 NEXT UP:
+
+
+Add trophy collector on level screen
+Link to Twitter
+
+
+
 Make 3 levels with differnet color
-Tune the levels
-Add button to go back to level unlock
 
 
 SFX from https://opengameart.org/content/nes-8-bit-sound-effects
-
+Music by: 
 
 Bugs:
+Have the camera reset when you reset
 Have the timer start when you start
 
 
-P2:
-Show trophies earned 
-Streak for when at full speed
-Mini map
-Back tip of jetski shoots
-Fall into the water when you
 
 
 can finish line after dying
