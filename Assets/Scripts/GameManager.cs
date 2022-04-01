@@ -32,16 +32,12 @@ public class GameManager : MonoBehaviour
  * 
 
 DONE:
-Fix the trophy when you land on head
-Add button to go back to level unlock
-Secret back of the level area
-Random flip text
-Don't fall off the edge
-Tune the levels
+
  
 NEXT UP:
-
-
+Make itch page
+Prep Twitter post
+Prep insta post
 Add trophy collector on level screen
 Link to Twitter
 
